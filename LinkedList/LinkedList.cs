@@ -85,7 +85,60 @@ namespace LinkedList
                 }
                 temp.next = node;
             }
-            Console.WriteLine("{0} Appended into Linked List", node.data);
+        }
+
+        /// <summary>
+        /// This Method is For Searching Index/Position of the Element
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public int Search(int value)
+        {
+            Node node = this.head;
+            int count = 0;
+            while (node != null)
+            {
+                if (node.data == value)
+                {
+                    return count;
+                }
+                node = node.next;
+                count++;
+            }
+            return count;
+        }
+
+        /// <summary>
+        /// This Method Is For Inserting Elements At Particular Position
+        /// </summary>
+        /// <param name="position"></param>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        public Node InsertAtParticularPosition(int position, int data)
+        {
+            Node newestNode = new Node(data);
+            if (this.head == null)
+            {
+                return newestNode;
+            }
+            if (position == 0)
+            {
+                newestNode.next = this.head;
+                this.head = newestNode;
+                return this.head;
+            }
+            Node prev = null;
+            Node current = this.head;
+            int count = 0;
+            while (current != null && count < position)
+            {
+                prev = current;
+                current = current.next;
+                count++;
+            }
+            newestNode.next = prev.next;
+            prev.next = newestNode;
+            return this.head;
         }
     }
 }
