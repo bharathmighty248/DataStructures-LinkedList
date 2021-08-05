@@ -140,5 +140,19 @@ namespace LinkedList
             prev.next = newestNode;
             return this.head;
         }
+
+        /// <summary>
+        /// This Method is For Removing First Element
+        /// </summary>
+        /// <returns></returns>
+        public Node RemoveFirstNode()
+        {
+            if (this.head == null)
+            {
+                return null;
+            }
+            this.head = this.head.next;
+            return this.head;
+        }
     }
 }
