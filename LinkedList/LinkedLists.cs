@@ -159,7 +159,7 @@ namespace LinkedList
         /// This Method is For Removing Last Element
         /// </summary>
         /// <returns></returns>
-        internal Node RemoveLastNode()
+        public Node RemoveLastNode()
         {
             if (this.head == null)
             {
@@ -176,6 +176,47 @@ namespace LinkedList
             }
             newNode.next = null;
             return head;
+        }
+
+        /// <summary>
+        /// This Method Deletes Particular Element
+        /// </summary>
+        /// <param name="data"></param>
+        public void DeleteParticularElement(int data)
+        {
+            Node temp = head;
+            Node prev = null;
+            if (temp == null)
+            {
+                Console.WriteLine("LinkedList is Empty");
+            }
+            if (temp !=null && temp.data == data)
+            {
+                head = temp.next;
+            }
+            while (temp!=null && temp.data != data)  
+            {                                        
+                prev = temp;                         
+                temp = temp.next;                    
+            }
+            prev.next = temp.next;                   
+        }
+
+
+        public int Size()
+        {
+            Node temp = this.head;
+            int count = 0;
+            if (temp == null)
+            {
+                return count;
+            }
+            while (temp != null)
+            {
+                temp = temp.next;
+                count++;
+            }
+            return count;
         }
     }
 }
