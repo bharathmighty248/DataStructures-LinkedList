@@ -30,6 +30,9 @@ namespace LinkedList
             Console.WriteLine("{0} inserted into Linked List", node.data);
         }
 
+        /// <summary>
+        /// This Method is To Display the Elements In The LinkedList
+        /// </summary>
         public void Display()
         {
             Node temp = this.head;
@@ -41,6 +44,21 @@ namespace LinkedList
             {
                 Console.Write(temp.data + " ");
                 temp = temp.next;
+            }
+        }
+
+        public void AddInReverseOrder(int data)
+        {
+            Node newNode = new Node(data);
+            if (this.head == null)
+            {
+                this.head = newNode;
+            }
+            else
+            {
+                Node temp = this.head;
+                head = newNode;
+                head.next = temp;
             }
         }
     }
