@@ -4,9 +4,9 @@ using System.Text;
 
 namespace LinkedList
 {
-    class LinkedList
+    public class LinkedLists
     {
-        public Node head;
+        internal Node head;
         /// <summary>
         /// This Method is for Adding Elements to the LinkedList
         /// </summary>
@@ -114,7 +114,7 @@ namespace LinkedList
         /// <param name="position"></param>
         /// <param name="data"></param>
         /// <returns></returns>
-        public Node InsertAtParticularPosition(int position, int data)
+        internal Node InsertAtParticularPosition(int position, int data)
         {
             Node newestNode = new Node(data);
             if (this.head == null)
@@ -145,7 +145,7 @@ namespace LinkedList
         /// This Method is For Removing First Element
         /// </summary>
         /// <returns></returns>
-        public Node RemoveFirstNode()
+        internal Node RemoveFirstNode()
         {
             if (this.head == null)
             {
@@ -159,7 +159,7 @@ namespace LinkedList
         /// This Method is For Removing Last Element
         /// </summary>
         /// <returns></returns>
-        public Node RemoveLastNode()
+        internal Node RemoveLastNode()
         {
             if (this.head == null)
             {
