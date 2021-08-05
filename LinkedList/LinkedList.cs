@@ -27,7 +27,6 @@ namespace LinkedList
                 }
                 temp.next = node;
             }
-            Console.WriteLine("{0} inserted into Linked List", node.data);
         }
 
         /// <summary>
@@ -47,6 +46,10 @@ namespace LinkedList
             }
         }
 
+        /// <summary>
+        /// This Method is For Adding Elements In Reverse Order Into LinkedList
+        /// </summary>
+        /// <param name="data"></param>
         public void AddInReverseOrder(int data)
         {
             Node newNode = new Node(data);
@@ -60,6 +63,29 @@ namespace LinkedList
                 head = newNode;
                 head.next = temp;
             }
+        }
+
+        /// <summary>
+        /// This Method is For Appending Elements Into LinkedList
+        /// </summary>
+        /// <param name="data"></param>
+        public void Append(int data)
+        {
+            Node node = new Node(data);
+            if (this.head == null)
+            {
+                this.head = node;
+            }
+            else
+            {
+                Node temp = head;
+                while (temp.next != null)
+                {
+                    temp = temp.next;
+                }
+                temp.next = node;
+            }
+            Console.WriteLine("{0} Appended into Linked List", node.data);
         }
     }
 }
