@@ -6,7 +6,7 @@ namespace LinkedList
 {
     public class LinkedLists
     {
-        internal Node head;
+        public Node head;
         /// <summary>
         /// This Method is for Adding Elements to the LinkedList
         /// </summary>
@@ -114,7 +114,7 @@ namespace LinkedList
         /// <param name="position"></param>
         /// <param name="data"></param>
         /// <returns></returns>
-        internal Node InsertAtParticularPosition(int position, int data)
+        public Node InsertAtParticularPosition(int position, int data)
         {
             Node newestNode = new Node(data);
             if (this.head == null)
@@ -145,7 +145,7 @@ namespace LinkedList
         /// This Method is For Removing First Element
         /// </summary>
         /// <returns></returns>
-        internal Node RemoveFirstNode()
+        public Node RemoveFirstNode()
         {
             if (this.head == null)
             {
