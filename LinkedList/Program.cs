@@ -6,18 +6,11 @@ namespace LinkedList
     {
         static void Main(string[] args)
         {
-            SortedLinkedList<int> sortingList = new SortedLinkedList<int>();
-            sortingList.AddNode(56);
-            sortingList.AddNode(30);
-            sortingList.AddNode(40);
-            sortingList.AddNode(70);
-            Console.WriteLine("Original List: ");
-            sortingList.DisplaySort();
-            sortingList.SortOrderedList();
-            Console.WriteLine("Final Sorted List: ");
-            sortingList.DisplaySort();
-
-            
+            LinkedListStack linkedListStack = new LinkedListStack();
+            linkedListStack.Push(70);
+            linkedListStack.Push(30);
+            linkedListStack.Push(56);
+            linkedListStack.Display();
         }
     }
 }
