@@ -6,21 +6,21 @@ namespace LinkedList
 {
     public class LinkedLists
     {
-        public Node head;
+        public Node<int> head;
         /// <summary>
         /// This Method is for Adding Elements to the LinkedList
         /// </summary>
         /// <param name="data"></param>
         public void Add(int data)
         {
-            Node node = new Node(data);
+            Node<int> node = new Node<int>(data);
             if (this.head == null)
             {
                 this.head = node;
             }
             else
             {
-                Node temp = head;
+                Node<int> temp = head;
                 while (temp.next != null)
                 {
                     temp = temp.next;
@@ -34,7 +34,7 @@ namespace LinkedList
         /// </summary>
         public void Display()
         {
-            Node temp = this.head;
+            Node<int> temp = this.head;
             if (temp == null)
             {
                 Console.WriteLine("LinkedList is Empty");
@@ -52,14 +52,14 @@ namespace LinkedList
         /// <param name="data"></param>
         public void AddInReverseOrder(int data)
         {
-            Node newNode = new Node(data);
+            Node<int> newNode = new Node<int>(data);
             if (this.head == null)
             {
                 this.head = newNode;
             }
             else
             {
-                Node temp = this.head;
+                Node<int> temp = this.head;
                 head = newNode;
                 head.next = temp;
             }
@@ -71,14 +71,14 @@ namespace LinkedList
         /// <param name="data"></param>
         public void Append(int data)
         {
-            Node node = new Node(data);
+            Node<int> node = new Node<int>(data);
             if (this.head == null)
             {
                 this.head = node;
             }
             else
             {
-                Node temp = head;
+                Node<int> temp = head;
                 while (temp.next != null)
                 {
                     temp = temp.next;
@@ -94,7 +94,7 @@ namespace LinkedList
         /// <returns></returns>
         public int Search(int value)
         {
-            Node node = this.head;
+            Node<int> node = this.head;
             int count = 0;
             while (node != null)
             {
@@ -114,9 +114,9 @@ namespace LinkedList
         /// <param name="position"></param>
         /// <param name="data"></param>
         /// <returns></returns>
-        public Node InsertAtParticularPosition(int position, int data)
+        public Node<int> InsertAtParticularPosition(int position, int data)
         {
-            Node newestNode = new Node(data);
+            Node<int> newestNode = new Node<int>(data);
             if (this.head == null)
             {
                 return newestNode;
@@ -127,8 +127,8 @@ namespace LinkedList
                 this.head = newestNode;
                 return this.head;
             }
-            Node prev = null;
-            Node current = this.head;
+            Node<int> prev = null;
+            Node<int> current = this.head;
             int count = 0;
             while (current != null && count < position)
             {
@@ -145,7 +145,7 @@ namespace LinkedList
         /// This Method is For Removing First Element
         /// </summary>
         /// <returns></returns>
-        public Node RemoveFirstNode()
+        public Node<int> RemoveFirstNode()
         {
             if (this.head == null)
             {
@@ -159,7 +159,7 @@ namespace LinkedList
         /// This Method is For Removing Last Element
         /// </summary>
         /// <returns></returns>
-        public Node RemoveLastNode()
+        public Node<int> RemoveLastNode()
         {
             if (this.head == null)
             {
@@ -169,7 +169,7 @@ namespace LinkedList
             {
                 return null;
             }
-            Node newNode = head;
+            Node<int> newNode = head;
             while (newNode.next.next != null)
             {
                 newNode = newNode.next;
@@ -184,8 +184,8 @@ namespace LinkedList
         /// <param name="data"></param>
         public void DeleteParticularElement(int data)
         {
-            Node temp = head;
-            Node prev = null;
+            Node<int> temp = head;
+            Node<int> prev = null;
             if (temp == null)
             {
                 Console.WriteLine("LinkedList is Empty");
@@ -202,10 +202,13 @@ namespace LinkedList
             prev.next = temp.next;                   
         }
 
-
+        /// <summary>
+        /// This Method Is for Finding Size Of LinkedList
+        /// </summary>
+        /// <returns></returns>
         public int Size()
         {
-            Node temp = this.head;
+            Node<int> temp = this.head;
             int count = 0;
             if (temp == null)
             {
@@ -218,5 +221,7 @@ namespace LinkedList
             }
             return count;
         }
+
+
     }
 }
