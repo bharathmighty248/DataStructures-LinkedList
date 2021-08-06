@@ -32,13 +32,30 @@ namespace LinkedList
             Node<int> temp = this.head;
             if (temp == null)
             {
-                Console.WriteLine("Queue is Empty");
+                Console.WriteLine("\nQueue is Empty");
                 return;
             }
             while (temp != null)
             {
                 Console.Write(temp.data + " ");
                 temp = temp.next;
+            }
+        }
+
+        internal void Dequeue()
+        {
+            if (this.head == null)
+            {
+                Console.WriteLine("\nQueue is Empty,Deletion is Not Possible");
+                return;
+            }
+            else
+            {
+                while (this.head != null)
+                {
+                    Console.WriteLine("\nValue Dequeued is {0}", this.head.data);
+                    this.head = this.head.next;
+                }
             }
         }
     }
